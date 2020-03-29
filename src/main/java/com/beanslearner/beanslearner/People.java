@@ -1,12 +1,9 @@
 package com.beanslearner.beanslearner;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 
-public abstract class People<PersonType extends Person> implements Iterable<PersonType> {
-    List<PersonType> personList;
+public abstract class People <PersonType extends Person> implements Iterable<PersonType> {
+    List<PersonType> personList = new ArrayList<>();
 
     public People(List<PersonType> personList){
         this.personList = personList;
@@ -24,9 +21,11 @@ public abstract class People<PersonType extends Person> implements Iterable<Pers
 
     public void clear(){personList.clear();}
 
-    public void addAll(Iterable<PersonType> personTypes){
-        personList.addAll((Collection<? extends PersonType>) Arrays.asList(personTypes));}
-        //alternatively iterate and cast persontypes.getclass to persontype;
+    public void addAll(Iterable<PersonType> personTypes) {
+            for (PersonType personType : personTypes){
+                personList.add(personType);
+            }
+        }
 
     public PersonType findById(Long id){
         for (PersonType pt : personList){
@@ -39,5 +38,10 @@ public abstract class People<PersonType extends Person> implements Iterable<Pers
 
     public List<PersonType> findAll(){
         return personList;
+    }
+
+    @Override
+    public Iterator<PersonType> iterator() {
+        return personList.iterator();
     }
 }
