@@ -8,8 +8,8 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class ClassroomConfig {
 
-
-    @Bean
+    @Autowired
+    @Bean(name = "currentCohort")
     public Classroom currentCohort(Instructors instructors, Students students){
         return new Classroom(instructors,students);
     }

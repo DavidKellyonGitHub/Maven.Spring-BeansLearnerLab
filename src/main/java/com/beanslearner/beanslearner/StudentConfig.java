@@ -9,8 +9,6 @@ import java.util.List;
 
 @Configuration
 public class StudentConfig {
-    @Autowired
-    Students previousStudents;
 
     @Bean(name = "students")
     public Students currentStudents(){

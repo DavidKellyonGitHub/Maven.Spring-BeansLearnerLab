@@ -1,7 +1,5 @@
 package com.beanslearner.beanslearner;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -9,7 +7,6 @@ public class Classroom {
     Instructors instructors;
     Students students;
 
-    @Autowired
     public Classroom(Instructors instructors, Students students){
         this.instructors = instructors;
         this.students = students;

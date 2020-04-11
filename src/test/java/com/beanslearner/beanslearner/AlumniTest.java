@@ -11,13 +11,19 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-class ClassroomConfigTest {
+class AlumniTest {
 
     @Autowired
-    Classroom currentCohort;
+    Alumni alumni;
+
 
     @Test
-    void currentCohortTest() {
-        Assert.assertEquals(currentCohort.getStudents().findById(13L).getName(), "DaveK");
+    void executeBootCamp() {
+    for (Student student : alumni.getStudents().getPersonList()){
+        Assert.assertEquals(1200, student.getTotalStudyTime(), 0.0);
+    }
+    for (Instructor instructor : alumni.getInstructors().getPersonList()){
+        Assert.assertEquals(300, (double) instructor.getNumberOfHoursTaught(), 0.0);
+    }
     }
 }

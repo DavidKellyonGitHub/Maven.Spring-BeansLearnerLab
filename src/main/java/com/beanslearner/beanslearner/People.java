@@ -44,4 +44,12 @@ public abstract class People <PersonType extends Person> implements Iterable<Per
     public Iterator<PersonType> iterator() {
         return personList.iterator();
     }
+
+    public List<PersonType> getPersonList() {
+        return personList;
+    }
+
+    public void setPersonList(List<PersonType> personList) {
+        this.personList = personList;
+    }
 }
