@@ -15,30 +15,29 @@ import static org.junit.jupiter.api.Assertions.*;
 class InstructorsConfigTest {
 
     @Autowired
-    @Qualifier("USAInstructors")
+    @Qualifier(value = "USAInstructors")
     Instructors USAInstructors;
 
     @Autowired
-    @Qualifier("UKInstructors")
-    Instructors UKInstructors;
+    @Qualifier(value = "tcUkInstructors")
+    Instructors tcUkInstructors;
 
     @Autowired
-    @Qualifier("instructors")
+    @Qualifier(value = "instructors")
     Instructors ZCWInstructors;
-
 
     @Test
     void tcUsaInstructors() {
-        Assert.assertTrue(USAInstructors.findById(1L).getName().equals("USADolio"));
+        Assert.assertEquals("USADolio", USAInstructors.findById(1L).getName());
     }
 
     @Test
-    void tcUkInstuctors() {
-        Assert.assertTrue(UKInstructors.findById(5L).getName().equals("UKDolio"));
+    void tcUkInstructors() {
+        Assert.assertEquals("UKDolio", tcUkInstructors.findById(5L).getName());
     }
 
     @Test
     void instructors() {
-        Assert.assertTrue(ZCWInstructors.findById(9L).getName().equals("ZCWDolio"));
+        Assert.assertEquals("ZCWDolio", ZCWInstructors.findById(9L).getName());
     }
 }

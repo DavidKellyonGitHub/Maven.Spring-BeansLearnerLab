@@ -1,5 +1,6 @@
 package com.beanslearner.beanslearner;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -9,8 +10,6 @@ import java.util.List;
 
 @Configuration
 public class InstructorsConfig {
-    Instructors techConUK;
-    Instructors zcw;
 
     @Bean(name = "USAInstructors")
     public Instructors tcUsaInstructors(){
@@ -19,11 +18,11 @@ public class InstructorsConfig {
         inst.add(new Instructor(2L,"USANobles"));
         inst.add(new Instructor(3L,"USAFroilan"));
         inst.add(new Instructor(4L,"USAKris"));
-        return new Instructors(inst);
+        return  new Instructors(inst);
     }
 
-    @Bean(name = "UKInstructors")
-    public Instructors tcUkInstuctors(){
+    @Bean(name = "tcUkInstructors")
+    public Instructors tcUkInstructors(){
         List<Instructor> inst = new ArrayList<>();
         inst.add(new Instructor(5L,"UKDolio"));
         inst.add(new Instructor(6L,"UKNobles"));

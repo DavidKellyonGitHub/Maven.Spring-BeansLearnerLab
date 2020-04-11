@@ -1,5 +1,6 @@
 package com.beanslearner.beanslearner;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -8,6 +9,7 @@ import java.util.List;
 
 @Configuration
 public class StudentConfig {
+    @Autowired
     Students previousStudents;
 
     @Bean(name = "students")

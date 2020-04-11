@@ -15,20 +15,18 @@ import static org.junit.jupiter.api.Assertions.*;
 class StudentConfigTest {
 
     @Autowired
-    @Qualifier("students")
     Students students;
 
     @Autowired
-    @Qualifier("previousStudents")
     Students previousStudents;
 
     @Test
     void currentStudents() {
-        Assert.assertTrue(students.size()>0);
+        Assert.assertEquals(students.findById(13L).getName(), "DaveK");
     }
 
     @Test
     void previous() {
-        Assert.assertTrue(previousStudents.size()>0);
+        Assert.assertEquals(previousStudents.findById(19L).getName(), "JoannaC");
     }
 }

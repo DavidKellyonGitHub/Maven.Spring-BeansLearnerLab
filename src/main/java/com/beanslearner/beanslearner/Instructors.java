@@ -1,11 +1,14 @@
 package com.beanslearner.beanslearner;
 
+import org.springframework.beans.factory.annotation.Qualifier;
+
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Spliterator;
 import java.util.function.Consumer;
 
+@Qualifier(value = "instructors")
 public class Instructors extends People<Instructor> {
     public Instructors(List<Instructor> instructors) {
         super(instructors);
